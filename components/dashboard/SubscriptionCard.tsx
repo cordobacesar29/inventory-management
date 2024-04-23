@@ -7,7 +7,7 @@ export default function SubscriptionCard() {
     <div className="p-3 rounded-lg mt-6 bg-slate-900">
       <div className="border-b border-slate-600 pb-2">
         <p className="text-sm border-l-2 border-orange-400 pl-2">
-          Your Premium plan's trial expire in {""}
+          {`Your Premium plan's trial expire in `}
           <span className="text-orange-400 text-sm">13 days</span>
         </p>
       </div>
