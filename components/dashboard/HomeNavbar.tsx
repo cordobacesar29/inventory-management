@@ -1,8 +1,8 @@
 "use client";
+import { ROUTES } from "@/constants/routes";
 import { Building2 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 
 export default function HomeNavbar() {
   const pathname = usePathname();
@@ -40,18 +40,18 @@ export default function HomeNavbar() {
 const navLinks = [
   {
     title: "Dashboard",
-    href: "/dashboard/home/overview",
+    href: ROUTES.dashboard,
   },
   {
     title: "Getting Started",
-    href: "/dashboard/home/getting-started",
+    href: ROUTES.gettingStarted,
   },
   {
     title: "Recent Updates",
-    href: "/dashboard/home/updates",
+    href: ROUTES.updates,
   },
   {
     title: "Announcements",
-    href: "/dashboard/home/announcements",
+    href: ROUTES.announcements
   },
 ];
