@@ -5,6 +5,13 @@ export interface ISalesActivity {
   href: string
   color: string
 }
+
+export interface IInventoryITem {
+  href: string;
+  label: string;
+  icon?: React.ReactNode;
+}
+
 export const inventorySummary = [
   {
     title: "quantity in hand",
