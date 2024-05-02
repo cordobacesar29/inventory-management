@@ -4,15 +4,21 @@ import {
   Blocks,
   BookOpen,
   ChevronLeft,
-  ChevronRight,
   Home,
+  PlusCircle,
   ShoppingBag,
   ShoppingCart,
 } from "lucide-react";
-import Link from "next/link";
-import React from "react";
 import SubscriptionCard from "./SubscriptionCard";
+import AccordionCustome from "./AccordionCustome";
+import { ROUTES } from "@/constants/routes";
+import SidebarLink from "./SidebarLink";
 
+export interface ItemType {
+  href: string;
+  label: string;
+  icon?: React.ReactNode;
+}
 export default function Sidebar() {
   return (
     <div className="flex">
@@ -22,44 +28,42 @@ export default function Sidebar() {
             <BaggageClaim />
             <span className="font-semibold text-xl">Inventory</span>
           </div>
-          <nav className="flex flex-col gap-6 p-3">
-            <Link href={""} className="flex items-center space-x-2">
-              <Home className="w-4 h-4" />
-              <span>Home</span>
-            </Link>
-            <button className="flex items-center space-x-2 justify-between">
-              <div className="flex items-center space-x-2">
-                <BaggageClaim className="w-4 h-4" />
-                <span>Inventory</span>
-              </div>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-            <button className="flex items-center space-x-2 justify-between">
-              <div className="flex items-center space-x-2">
-                <ShoppingCart className="w-4 h-4" />
-                <span>Sales</span>
-              </div>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-            <button className="flex items-center space-x-2 justify-between">
-              <div className="flex items-center space-x-2">
-                <ShoppingBag className="w-4 h-4" />
-                <span>Purchases</span>
-              </div>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-            <Link href={""} className="flex items-center space-x-2">
-              <Blocks className="w-4 h-4" />
-              <span>Integrations</span>
-            </Link>
-            <Link href={""} className="flex items-center space-x-2">
-              <BarChart4 className="w-4 h-4" />
-              <span>Reports</span>
-            </Link>
-            <Link href={""} className="flex items-center space-x-2">
-              <BookOpen className="w-4 h-4" />
-              <span>Documents</span>
-            </Link>
+          <nav className={`flex flex-col gap-6 p-3`}>
+            <SidebarLink
+              icon={<Home className="w-4 h-4" />}
+              label="Home"
+              route={ROUTES.dashboard}
+            />
+            <AccordionCustome
+              accordionLabel="Inventory"
+              accordionIcon={<BaggageClaim className="w-4 h-4" />}
+              items={inventoryItems}
+            />
+            <AccordionCustome
+              accordionLabel="Sales"
+              accordionIcon={<ShoppingCart className="w-4 h-4" />}
+              items={salesItems}
+            />
+            <AccordionCustome
+              accordionLabel="Purchases"
+              accordionIcon={<ShoppingBag className="w-4 h-4" />}
+              items={[]}
+            />
+            <SidebarLink
+              icon={<Blocks className="w-4 h-4" />}
+              label="Integrations"
+              route={ROUTES.integrations}
+            />
+            <SidebarLink
+              icon={<BarChart4 className="w-4 h-4" />}
+              label="Reports"
+              route={ROUTES.reports}
+            />
+            <SidebarLink
+              icon={<BookOpen className="w-4 h-4" />}
+              label="Documents"
+              route={ROUTES.documents}
+            />
           </nav>
           <SubscriptionCard />
         </div>
@@ -74,3 +78,73 @@ export default function Sidebar() {
     </div>
   );
 }
+const inventoryItems: ItemType[] = [
+  {
+    href: ROUTES.newItem,
+    icon: <PlusCircle className=" w-4 h-4" />,
+    label: "Items",
+  },
+  {
+    href: ROUTES.newCategory,
+    icon: <PlusCircle className=" w-4 h-4" />,
+    label: "Categories",
+  },
+  {
+    href: ROUTES.newBrand,
+    icon: <PlusCircle className=" w-4 h-4" />,
+    label: "Brands",
+  },
+  {
+    href: ROUTES.newUnit,
+    icon: <PlusCircle className=" w-4 h-4" />,
+    label: "Units",
+  },
+  {
+    href: ROUTES.newWarehouse,
+    icon: <PlusCircle className=" w-4 h-4" />,
+    label: "Warehouse",
+  },
+];
+
+export const salesItems: ItemType[] = [
+  {
+    href: "#",
+    label: "Sales",
+  },
+  {
+    href: "#",
+    label: "Customers",
+  },
+  {
+    href: "#",
+    label: "Sales Ordes",
+  },
+  {
+    href: "#",
+    label: "Packages",
+  },
+  {
+    href: "#",
+    label: "Shipments",
+  },
+  {
+    href: "#",
+    label: "Invoices",
+  },
+  {
+    href: "#",
+    label: "Credit Notes",
+  },
+  {
+    href: "#",
+    label: "Payments Received",
+  },
+  {
+    href: "#",
+    label: "Sales Returns",
+  },
+  {
+    href: "#",
+    label: "Sales Receipts",
+  },
+];
