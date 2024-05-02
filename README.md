@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Resumen del Sistema de Gestión de Inventario
 
-## Getting Started
 
-First, run the development server:
+Este sistema es una herramienta para gestionar el stock, ventas, compras, usuarios y más dentro de un negocio. Lo hace a través de diferentes módulos que trabajan en conjunto.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Módulo Principal (Dashboard)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Te da una visión general del estado del inventario con indicadores clave como la cantidad de productos, ventas y ganancias. Todo presentado de forma visual para una fácil comprensión.
+Módulo de Inventario
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Artículos: Permite crear, editar y gestionar productos individualmente. Incluye detalles como nombre, descripción, código único (SKU), precio y categoría.
+Grupos de Artículos: Organiza los artículos en grupos o categorías para facilitar su búsqueda y administración.
+Módulo de Ventas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Gestión de Clientes: Almacena y administra información de clientes, incluyendo datos de contacto, historial de compras y preferencias.
+Pedidos de Venta: Crea, rastrea y gestiona los pedidos y envíos de los clientes.
+Paquetes y Envíos: Maneja el embalaje y envío de artículos a los clientes.
+Facturas y Recibos: Genera y gestiona facturas de las ventas, incluyendo seguimiento de pagos y recibos.
+Módulo de Compras
 
-## Learn More
+Gestión de Proveedores: Mantiene información sobre proveedores, incluyendo datos de contacto, condiciones de pago e historial de compras.
+Órdenes de Compra: Crea, gestiona y rastrea pedidos a proveedores.
+Facturas y Gastos: Rastrea gastos relacionados con la compra de inventario, como costos de envío y manipulación.
+Pagos Realizados: Registra y rastrea pagos realizados a proveedores.
+Módulo de Reportes
 
-To learn more about Next.js, take a look at the following resources:
+Reportes de Ventas: Genera informes sobre el rendimiento de las ventas, incluyendo ventas por artículo, cliente o periodo.
+Reportes de Inventario: Proporciona información sobre los niveles de inventario, el movimiento de artículos y el estado del stock.
+Reportes de Cuentas por Cobrar: Gestiona y supervisa los pagos pendientes y las cuentas por cobrar de los clientes.
+Módulo de Gestión de Usuarios
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Garantiza que solo usuarios autorizados puedan acceder al sistema mediante la administración de cuentas de usuario, roles y permisos.
+Configuración del Sistema
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Permite a los usuarios configurar ajustes del sistema, como las tasas de impuestos.
+En resumen, este sistema de gestión de inventario te ayuda a tener un control completo sobre tu stock, ventas, compras, usuarios y más.
