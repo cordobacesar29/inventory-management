@@ -5,14 +5,14 @@ interface Props {
   label: string;
   className?: string;
   register: UseFormRegister<any>;
-  required: boolean;
+  isRequired?: boolean;
   errors: FieldErrors<any>;
 }
 export default function TextareaInput({
   label,
   name,
   register,
-  required = true,
+  isRequired,
   className = "sm:col-span-2",
   errors,
   ...props
@@ -27,7 +27,7 @@ export default function TextareaInput({
       </label>
       <div className="mt-2">
         <textarea
-          {...register(name, { required: true })}
+          {...register(name, { required: isRequired })}
           id={name}
           name={name}
           rows={3}

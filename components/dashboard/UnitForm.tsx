@@ -46,7 +46,7 @@ export default function UnitForm() {
           label="Unit title"
           name="title"
           register={register}
-          required
+          isRequired
           type="text"
           className="w-full"
           placeholder="Type the unit title"
@@ -56,7 +56,7 @@ export default function UnitForm() {
           label="Unit Abbreviation"
           name="abbreviation"
           register={register}
-          required
+          isRequired
           type="text"
           className="w-full"
           placeholder="Type the unit abbreviation"

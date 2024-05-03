@@ -41,13 +41,13 @@ export default function BrandForm() {
     >
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
         <TextInput
-          errors={errors}
           label="Brand title"
           name="title"
-          register={register}
-          required
           type="text"
           placeholder="Type the brand title"
+          errors={errors}
+          register={register}
+          isRequired
         />
       </div>
       <div className="mt-6 sm:col-span-1">

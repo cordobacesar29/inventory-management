@@ -56,38 +56,39 @@ export default function WarehouseForm() {
     >
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 items-center">
         <Select
-          register={register}
           placeholder="Select the warehouse type"
           name="type"
+          className="w-full"
+          errors={errors}
+          register={register}
           options={warehouseType}
           isRequired
-          className="w-full"
         />
         <TextInput
           placeholder="Type the warehouse title"
-          errors={errors}
           label="Warehouse title"
           name="title"
-          register={register}
-          required
           type="text"
           className="w-full"
+          errors={errors}
+          register={register}
+          isRequired
         />
         <TextInput
           placeholder="Type the warehouse location"
-          errors={errors}
           label="Warehouse location"
           name="location"
-          register={register}
-          required
           type="text"
+          errors={errors}
+          register={register}
+          isRequired
         />
         <TextareaInput
-          errors={errors}
           label="Warehouse description"
           name="description"
+          errors={errors}
           register={register}
-          required
+          isRequired
         />
       </div>
       <div className="mt-6 sm:col-span-1">

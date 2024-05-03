@@ -44,20 +44,20 @@ export default function CategoryForm() {
     >
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
         <TextInput
-          errors={errors}
           label="Category title"
           name="title"
-          register={register}
-          required
           type="text"
           placeholder="Type the category title"
+          errors={errors}
+          register={register}
+          isRequired
         />
         <TextareaInput
-          errors={errors}
           label="Category description"
           name="description"
+          errors={errors}
           register={register}
-          required
+          isRequired
         />
       </div>
       <div className="mt-6 sm:col-span-1">
