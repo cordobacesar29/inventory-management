@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ItemType } from "./Sidebar";
+import { ItemLinkType } from "./Sidebar";
 import {
   Accordion,
   AccordionContent,
@@ -12,7 +12,7 @@ import { usePathname } from "next/navigation";
 export interface IAccordion {
   accordionLabel: string;
   accordionIcon: React.ReactNode;
-  items: ItemType[];
+  items: ItemLinkType[];
 }
 
 export default function AccordionCustome({
