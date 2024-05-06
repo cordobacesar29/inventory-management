@@ -1,8 +1,9 @@
+import { ItemType } from "@/constants/items.types";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const data = await request.json();
+    const data:ItemType = await request.json();
     console.log(data)
     return NextResponse.json(data);
   } catch (error) {

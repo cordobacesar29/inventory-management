@@ -14,7 +14,7 @@ import AccordionCustome from "./AccordionCustome";
 import { ROUTES } from "@/constants/routes";
 import SidebarLink from "./SidebarLink";
 
-export interface ItemType {
+export interface ItemLinkType {
   href: string;
   label: string;
   icon?: React.ReactNode;
@@ -78,7 +78,7 @@ export default function Sidebar() {
     </div>
   );
 }
-const inventoryItems: ItemType[] = [
+const inventoryItems: ItemLinkType[] = [
   {
     href: ROUTES.newItem,
     icon: <PlusCircle className=" w-4 h-4" />,
@@ -106,7 +106,7 @@ const inventoryItems: ItemType[] = [
   },
 ];
 
-export const salesItems: ItemType[] = [
+export const salesItems: ItemLinkType[] = [
   {
     href: "#",
     label: "Sales",

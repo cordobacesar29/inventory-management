@@ -5,10 +5,11 @@ import SubmitButton from "../formInputs/SubmitButton";
 import { useState } from "react";
 import TextareaInput from "../formInputs/TextareaInput";
 import Select, { OptionSelectType } from "../formInputs/SelectInput";
+import { UploadButton } from "@/lib/uploadthing";
+import { ClientUploadedFileData } from "uploadthing/types";
+import { ItemType } from "@/constants/items.types";
+import UploadImageComponent from "./UploadImageComponent";
 
-export interface IItemForm {
-  title: string;
-}
 export default function ItemForm() {
   const categoriesSelectOptions: OptionSelectType[] = [
     { label: "Bebidas", value: "drinks" },
@@ -31,10 +32,12 @@ export default function ItemForm() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<IItemForm>();
+  } = useForm<ItemType>();
   const [loading, setLoading] = useState<boolean>(false);
-  const onSubmit: SubmitHandler<IItemForm> = async (data) => {
-    setLoading(true);
+  const [imageUrl, setImageUrl] = useState<undefined | string>(undefined);
+  const onSubmit: SubmitHandler<ItemType> = async (data) => {
+    data.imageUrl = imageUrl ?? "";
+    console.log(data)
     const url = "http://localhost:3000";
     try {
       const res = await fetch(`${url}/api/items`, {
@@ -52,6 +55,14 @@ export default function ItemForm() {
       setLoading(false);
     }
   };
+
+  const handleUpoadImageComplete = (
+    res: ClientUploadedFileData<{ uploadedBy: string }>[]
+  ) => {
+    if (res) return setImageUrl(res[0].url);
+    return;
+  };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -188,6 +199,7 @@ export default function ItemForm() {
           errors={errors}
           register={register}
         />
+        <UploadImageComponent label="Upload Image" imageUrl={imageUrl} setImageUrl={setImageUrl}/>
         <TextInput
           name="taxRate"
           label="Item Tax  Rate in %"
