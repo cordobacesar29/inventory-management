@@ -104,6 +104,11 @@ const inventoryItems: ItemLinkType[] = [
     icon: <PlusCircle className=" w-4 h-4" />,
     label: "Warehouse",
   },
+  {
+    href: ROUTES.newAdjustment,
+    icon: <PlusCircle className=" w-4 h-4" />,
+    label: "Adjustments",
+  },
 ];
 
 export const salesItems: ItemLinkType[] = [

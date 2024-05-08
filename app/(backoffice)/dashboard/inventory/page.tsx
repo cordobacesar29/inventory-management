@@ -61,4 +61,11 @@ const itemCardOptions: IOptionsCard[] = [
     buttonLabel: "New Unit",
     icon: <ScrollText className="w-36 h-36" />,
   },
+  {
+    title: "Adjustments",
+    subject: "Transfer stcok from the Main warehouse",
+    href: ROUTES.newAdjustment,
+    buttonLabel: "New Adjustment",
+    icon: <ScrollText className="w-36 h-36" />,
+  },
 ];

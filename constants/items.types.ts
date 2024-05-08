@@ -17,3 +17,9 @@ export interface ItemType {
   rate: number
   imageUrl: string
 }
+
+export interface IAdjustmentForm {
+  transferStockQuantity: number;
+  notes: string;
+  recivingBranchId: string;
+}

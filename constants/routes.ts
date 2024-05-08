@@ -18,6 +18,8 @@ export const ROUTES = {
   newUnit: "/dashboard/inventory/units/new",
   warehouse: "/dashboard/inventory/warehouse",
   newWarehouse: "/dashboard/inventory/warehouse/new",
+  adjustments: "/dashboard/inventory/adjustments",
+  newAdjustment: "/dashboard/inventory/adjustments/new",
   /* purchase */
   
   /* integrations */
